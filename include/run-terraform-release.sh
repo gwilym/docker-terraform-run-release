@@ -38,7 +38,7 @@ for var in $(compgen -e); do
 done
 
 # terraform >= 0.9: the backend type is defined in the released files `terraform` section
-terraform init -backend=true -backend-config=backend.hcl
+terraform init -input=false -no-color -reconfigure -backend=true -backend-config=backend.hcl
 
 # TODO: terraform >= 0.8 < 0.9:
 # terraform remote config -backend=${BACKEND_NAME} ${BACKEND_CONFIGS}`;
