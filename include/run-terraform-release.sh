@@ -32,6 +32,7 @@ for var in $(compgen -e); do
 		# no backends appear to require that support anyway
 		config_key=$(echo "${var}" | sed -r "s/^BACKEND_//g" | tr '[:upper:]' '[:lower:]')
 		config_val="${!var}"
+		echo "Using env var ${var} as backend config var: ${config_key}"
 		echo "${config_key} = \"${config_val}\"" >> backend.hcl
 	fi
 done
